@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question": "What is Retrieval-Augmented Generation and what problem does it address?",
+    "category": "answerable",
+    "expected_label": "trusted"
+  },
+  {
+    "id": 2,
+    "question": "Who introduced SelfCheckGPT and what year was it published?",
+    "category": "answerable",
+    "expected_label": "trusted"
+  },
+  {
+    "id": 3,
+    "question": "What is the capital of France?",
+    "category": "out_of_domain",
+    "expected_label": "flagged"
+  }
+]
