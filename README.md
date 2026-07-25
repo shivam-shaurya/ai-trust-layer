@@ -1,4 +1,4 @@
-# AI Trust Layer
+# TrustShield AI
 
 A Trust Layer that wraps a RAG pipeline with a verification and explainability layer,
 surfaced through a live Streamlit dashboard. Goal: score and explain how trustworthy each
@@ -6,10 +6,11 @@ answer is, not just generate fluent text.
 
 ## Status
 
-**Milestone 1-2 (this commit):** basic RAG pipeline (ingestion, retrieval, generation) plus
-a hybrid Prompt Risk Score (regex + embedding similarity + LLM reasoning) and Retrieval
-Quality scoring, surfaced in a Streamlit dashboard. Confidence scoring, hallucination
-detection, explainability text, and the processing timeline come in later milestones.
+**Milestone 2.5 (this commit):** basic RAG pipeline (ingestion, retrieval, generation) plus
+a hybrid Prompt Risk Score (regex + embedding similarity + LLM reasoning), Retrieval
+Quality scoring, a composite Trust Score with recommendations, and a five-axis trust radar
+chart, surfaced in a Streamlit dashboard. Citation coverage, semantic consistency, and
+hallucination verification (the remaining two radar axes) come in Milestone 3.
 
 ## Setup
 
@@ -37,7 +38,7 @@ rebuild.
 ## Project layout
 
 ```
-ai-trust-layer/
+trustshield-ai/
 ├── app.py                  # Streamlit dashboard entrypoint
 ├── docs/                   # Source documents for the RAG corpus
 ├── index/                  # Generated FAISS index + chunk metadata (gitignored)
@@ -47,6 +48,7 @@ ai-trust-layer/
 │   ├── retrieval.py          # Query FAISS index, return top-k chunks + scores + retrieval quality
 │   ├── generation.py         # Call OpenRouter with retrieved context
 │   ├── risk_scoring.py       # Hybrid Prompt Risk Score (regex + embedding + LLM)
+│   ├── trust_score.py        # Composite Trust Score, recommendations, radar chart data
 │   └── pipeline.py           # Orchestrates the full flow, records per-stage timing
 ├── eval/                   # Test questions + evaluation script (later milestone)
 ├── .env.example
