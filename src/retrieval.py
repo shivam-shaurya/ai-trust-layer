@@ -93,14 +93,14 @@ def score_retrieval_quality(chunks, k_requested):
         sim_matrix = embeddings @ embeddings.T
         n = len(embeddings)
         pairwise = [sim_matrix[i][j] for i in range(n) for j in range(n) if i != j]
-        diversity = 1.0 - (sum(pairwise) / len(pairwise))
+        diversity = float(1.0 - (sum(pairwise) / len(pairwise)))
     else:
         diversity = 0.0
 
     # avg_similarity/diversity/coverage are each already ~[0,1]; clamp for safety since
     # cosine similarity can dip slightly negative for unrelated text.
-    quality_score = 0.5 * max(0.0, avg_similarity) + 0.3 * max(0.0, diversity) + 0.2 * min(
-        1.0, coverage
+    quality_score = float(
+        0.5 * max(0.0, avg_similarity) + 0.3 * max(0.0, diversity) + 0.2 * min(1.0, coverage)
     )
 
     return {
