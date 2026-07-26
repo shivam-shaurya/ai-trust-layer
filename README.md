@@ -12,6 +12,23 @@ Quality scoring, a composite Trust Score with recommendations, and a five-axis t
 chart. Citation coverage, semantic consistency, and hallucination verification (the
 remaining two radar axes) come in Milestone 3.
 
+## Dataset
+
+The RAG corpus in `docs/` is built from **SQuAD v1.1** (Rajpurkar et al., 2016 —
+[rajpurkar.github.io/SQuAD-explorer](https://rajpurkar.github.io/SQuAD-explorer/)), a
+standard, citable, human-annotated QA benchmark over Wikipedia paragraphs (CC BY-SA 4.0).
+Eight distinct article paragraphs (Super Bowl 50, Warsaw, Nikola Tesla, Martin Luther,
+Southern California, Oxygen, Ctenophora, Victoria and Albert Museum) were sampled from the
+validation split, each kept as one source document.
+
+`eval/test_questions.json` mixes two real SQuAD question/answer pairs per document (with
+the official gold answer in `expected_answer`, so generated answers can be checked for
+correctness, not just "trusted vs. flagged") with hand-authored questions covering the
+categories SQuAD doesn't provide: ambiguous, out-of-domain, and adversarial/prompt-injection.
+
+Regenerate the corpus (or swap in a different SQuAD sample) via the HuggingFace datasets
+viewer API: `https://datasets-server.huggingface.co/rows?dataset=rajpurkar/squad&config=plain_text&split=validation&offset=<N>&length=<up to 100>`.
+
 ## Architecture
 
 - **Backend** (`server.py`): a FastAPI app wrapping `src/pipeline.run_pipeline` as a single

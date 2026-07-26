@@ -1,0 +1,4 @@
+Source: SQuAD v1.1 (Rajpurkar et al., 2016), Wikipedia article "Nikola Tesla"
+Licensed CC BY-SA 4.0 (Wikipedia text via SQuAD). https://rajpurkar.github.io/SQuAD-explorer/
+
+In an interview with newspaper editor Arthur Brisbane, Tesla said that he did not believe in telepathy, stating, "Suppose I made up my mind to murder you," he said, "In a second you would know it. Now, isn't that wonderful? By what process does the mind get at all this?" In the same interview, Tesla said that he believed that all fundamental laws could be reduced to one.

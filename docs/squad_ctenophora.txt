@@ -1,0 +1,4 @@
+Source: SQuAD v1.1 (Rajpurkar et al., 2016), Wikipedia article "Ctenophora"
+Licensed CC BY-SA 4.0 (Wikipedia text via SQuAD). https://rajpurkar.github.io/SQuAD-explorer/
+
+There are eight rows of combs that run from near the mouth to the opposite end, and are spaced evenly round the body. The "combs" beat in a metachronal rhythm rather like that of a Mexican wave. From each balancer in the statocyst a ciliary groove runs out under the dome and then splits to connect with two adjacent comb rows, and in some species runs all the way along the comb rows. This forms a mechanical system for transmitting the beat rhythm from the combs to the balancers, via water disturbances created by the cilia.
